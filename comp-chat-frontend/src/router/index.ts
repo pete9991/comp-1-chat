@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CreateUser from "../views/CreateUser.vue";
 import Chat from "../views/Chat.vue";
+import CreateRoom from "../views/CreateRoom.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: "/chat",
       name: "Chat",
       component: Chat,
+    },
+    {
+      path: "/createroom",
+      name: "CreateRoom",
+      component: CreateRoom,
     },
   ],
 });

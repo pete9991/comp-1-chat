@@ -14,5 +14,10 @@ export const RoomSchema = new EntitySchema<Room>({
       type: 'varchar',
     },
   },
-  relations: {},
+  relations: {
+    user: {
+      type: 'many-to-one',
+      target: 'User',
+    },
+  },
 });

@@ -6,10 +6,14 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { RoomService } from "@/services/room.service";
 
 const inputName = ref("");
+const roomService = new RoomService();
 
-function handleCreateRoom() {}
+function handleCreateRoom() {
+  roomService.createRoom(inputName.value);
+}
 </script>
 
 <style scoped></style>

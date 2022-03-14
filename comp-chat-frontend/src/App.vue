@@ -8,10 +8,11 @@ const userStore = UserStore();
   <nav>
     | <RouterLink to="/">Home</RouterLink> |
     <RouterLink to="/createuser"> Create a user</RouterLink> |
-    <RouterLink to="/chat"> join Chat</RouterLink> |
-    <span v-if="userStore.userName.length > 0"
-      >logged in as: {{ userStore.userName }}</span
-    >
+    <span v-if="userStore.userName.length > 0">
+      <RouterLink to="/chat"> join Chat</RouterLink> |
+      <router-link to="/createroom"> Create a chat room</router-link> | logged
+      in as: {{ userStore.userName }}
+    </span>
   </nav>
   <br />
   <RouterView />
