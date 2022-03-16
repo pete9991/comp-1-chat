@@ -5,7 +5,8 @@
   <input v-model="roomChatInput" placeholder="Enter room name" />
   <br />
   <button @click="sendChat">Send!</button>
-  <h2>All Chats</h2>
+  <h3>All Chats</h3>
+  <h3>You are currently in the room: {{ chatStore.roomName }}</h3>
   <input v-model="roomListener" placeholder="enter room name" /> <br />
   <button @click="listenToRoom">connect</button>
   <ul>
