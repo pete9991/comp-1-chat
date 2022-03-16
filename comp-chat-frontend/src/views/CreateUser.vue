@@ -1,12 +1,11 @@
 <template>
-  <h2>Here you can create a user</h2>
-  <input v-model="inputName" placeholder="Enter name" />
-  <br />
-  <input v-model="inputEmail" placeholder="Enter email" />
-  <br />
-  <input v-model="inputPassword" placeholder="Enter password" />
-  <br />
+  <div style="text-align: center;">
+  <h2>Create a new user</h2>
+  <InputText v-model="inputName" style="margin-bottom: 10px" placeholder="Enter name" /> <br />
+  <InputText v-model="inputEmail" style="margin-bottom: 10px" placeholder="Enter email" /> <br />
+  <InputText v-model=" inputPassword" style="margin-bottom: 10px"  placeholder="Enter password" /> <br />
   <button @click="handleCreateUser">Create</button>
+</div>
 </template>
 
 <script setup lang="ts">

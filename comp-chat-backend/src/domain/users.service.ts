@@ -15,4 +15,8 @@ export class UsersService {
   login(email: string, password: string) {
     return this.userRepo.login(email, password);
   }
+
+  getAllFromInput(input: string) {
+    return this.userRepo.getAllFromInput(input);
+  }
 }

@@ -17,9 +17,7 @@ function handleLoginUser() {
     <br />
     <h3>Login For User</h3>
     <InputText v-model="inputEmail" style="margin-bottom: 10px" placeholder="Enter email" /> <br />
-
     <InputText v-model="inputPassword" style="margin-bottom: 10px" placeholder="Enter password" /> <br />
-
     <Button @click="handleLoginUser">Login</Button>
     </div>
   </main>

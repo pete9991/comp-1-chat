@@ -4,6 +4,7 @@ import { EntityManager, Repository } from 'typeorm';
 import { UserSchema } from './user.schema';
 import { Injectable } from '@nestjs/common';
 
+
 @Injectable()
 export class UserRepositoryAdapter implements IUsersRepository {
   private readonly userRepo: Repository<User>;
@@ -18,5 +19,9 @@ export class UserRepositoryAdapter implements IUsersRepository {
 
   login(email: string, password: string): Promise<User> {
     return this.userRepo.findOne({ email: email, password: password });
+  }
+
+  getAllFromInput(input: string): Promise<User[]> {
+    return this.userRepo.find(undefined);
   }
 }
