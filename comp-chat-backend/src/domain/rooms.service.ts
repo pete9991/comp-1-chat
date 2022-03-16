@@ -11,7 +11,7 @@ export class RoomsService {
     this.roomRepo = roomRepository;
   }
 
-  create(name: string): Promise<Room> {
-    return this.roomRepo.create(name);
+  create(room: CreateRoomDto): Promise<Room> {
+    return this.roomRepo.create(room);
   }
 }

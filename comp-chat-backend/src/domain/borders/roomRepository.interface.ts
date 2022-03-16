@@ -1,5 +1,6 @@
 import { Room } from '../../core/room.entity';
+import { CreateRoomDto } from '../../rooms/dto/create-room.dto';
 
 export interface IRoomsRepository {
-  create(name: string): Promise<Room>;
+  create(room: CreateRoomDto): Promise<Room>;
 }

@@ -11,6 +11,6 @@ export class RoomsController {
 
   @Post()
   create(@Body() createRoomDto: CreateRoomDto): Promise<Room> {
-    return this.roomsService.create(createRoomDto.name);
+    return this.roomsService.create(createRoomDto);
   }
 }
