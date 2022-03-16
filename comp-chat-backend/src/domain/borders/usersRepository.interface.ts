@@ -8,4 +8,6 @@ export interface IUsersRepository {
   login(email: string, password: string): Promise<User>;
 
   getAllFromInput(input: string): Promise<User[]>;
+
+  addFriend(uuid: string, name: string): any;
 }
