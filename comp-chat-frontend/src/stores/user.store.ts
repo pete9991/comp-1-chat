@@ -1,8 +1,10 @@
 import { defineStore } from "pinia";
 import type { User } from "@/models/User";
 import { UserService } from "@/services/user.service";
+import {FriendRequestService} from "@/services/friendRequest.service";
 
 const userService: UserService = new UserService();
+const friendRequestService: FriendRequestService = new FriendRequestService();
 
 export const UserStore = defineStore({
   id: "UserStore",
