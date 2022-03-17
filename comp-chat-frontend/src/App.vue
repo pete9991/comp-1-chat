@@ -2,6 +2,12 @@
 import { RouterLink, RouterView } from "vue-router";
 import { UserStore } from "@/stores/user.store";
 const userStore = UserStore();
+import {createApp} from 'vue';
+import App from './App.vue';
+import PrimeVue from 'primevue/config';
+const app = createApp(App);
+
+app.use(PrimeVue);
 </script>
 
 <template>
@@ -17,3 +23,11 @@ const userStore = UserStore();
   <br />
   <RouterView />
 </template>
+
+<style>
+#app {
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
