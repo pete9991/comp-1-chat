@@ -5,6 +5,7 @@ import PrimeVue from "primevue/config";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import router from "./router";
+import Toolbar from "primevue/toolbar";
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -18,5 +19,6 @@ app.use(PrimeVue);
 
 app.component(`Button`, Button);
 app.component("InputText", InputText);
+app.component("Toolbar", Toolbar);
 
 app.mount("#app");

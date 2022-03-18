@@ -19,7 +19,7 @@ export class UsersService {
   getAllFromInput(input: string) {
     return this.userRepo.getAllFromInput(input);
   }
-  
+
   addFriend(uuid: string, name: string) {
     return this.userRepo.addFriend(uuid, name);
   }

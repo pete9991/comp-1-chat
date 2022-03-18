@@ -5,6 +5,7 @@ const userStore = UserStore();
 const inputEmail = ref("");
 const inputPassword = ref("");
 
+
 function handleLoginUser() {
   userStore.login(inputEmail.value, inputPassword.value);
 }

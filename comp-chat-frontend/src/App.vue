@@ -4,25 +4,38 @@ import { UserStore } from "@/stores/user.store";
 const userStore = UserStore();
 import {createApp} from 'vue';
 import App from './App.vue';
-import PrimeVue from 'primevue/config';
 const app = createApp(App);
 
-app.use(PrimeVue);
-</script>
 
+function  goHome() {
+  window.location.href ="/"
+}
+function  goCreateUser() {
+  window.location.href= "/createuser"
+
+}
+</script>
 <template>
-  <nav>
-    | <RouterLink to="/">Home</RouterLink> |
-    <RouterLink to="/createuser"> Create a user</RouterLink> |
-    <span v-if="userStore.userName.length > 0">
-      <RouterLink to="/chat"> join Chat</RouterLink> |
-      <router-link to="/createroom"> Create a chat room</router-link> | logged
-      in as: {{ userStore.userName }}
-    </span>
-  </nav>
-  <br />
-  <RouterView />
+  <div>
+    <Toolbar>
+      <template #start>
+        <Button  @click="goHome" label ="Home" icon="pi pi-home" class="mr-2" />
+        <Button @click ="goCreateUser" label="Create User" icon="pi pi-id-card" class="p-button-success" />
+        <span v-if="userStore.userName.length > 0">
+           <Button label="Chat" icon="pi pi-comment" :model="items" class="p-button-warning"/>
+          <Button label="Create a chat room" icon="pi pi-plus" class="mr2"/>
+        </span>
+
+      </template>
+
+      <template #end>
+        <Button icon="pi pi-search" class="mr-2" />
+        <Button icon="pi pi-times" class="p-button-danger" />
+      </template>
+    </Toolbar>
+  </div>
 </template>
+
 
 <style>
 #app {
