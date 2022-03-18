@@ -34,6 +34,8 @@ function  goCreateUser() {
       </template>
     </Toolbar>
   </div>
+  <br />
+  <RouterView />
 </template>
 
 
