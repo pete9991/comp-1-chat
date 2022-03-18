@@ -1,19 +1,26 @@
 <template>
-  <h2>send chat</h2>
-  <input v-model="txtChatInput" placeholder="Enter message" />
-  <br />
-  <input v-model="roomChatInput" placeholder="Enter room name" />
-  <br />
-  <button @click="sendChat">Send!</button>
+
+  <h3>Send a Message</h3>
+      <InputText v-model="txtChatInput" placeholder="Enter message"/> <br/>
+      <br/>
+      <InputText v-model="roomChatInput" placeholder="Enter room name"/> <br/>
+      <br/>
+      <Button @click="sendChat">Send</Button> <br/>
+  <br/>
+  <br/>
+  <br/>
   <h3>All Chats</h3>
-  <h3>You are currently in the room: {{ chatStore.roomName }}</h3>
-  <input v-model="roomListener" placeholder="enter room name" /> <br />
-  <button @click="listenToRoom">connect</button>
-  <ul>
-    <li v-for="(chat, index) in chatStore.chats" v-bind:key="index">
-      {{ chat.text }}
-    </li>
-  </ul>
+      <h2>You are currently in the room: {{chatStore.roomName}}</h2>
+      <InputText v-model="roomListener" placeholder="Enter room name"/> <br/>
+      <br/>
+      <Button @click="ListenToRoom">Connect</Button>
+      <br/>
+      <ul>
+        <li v-for="(chat, index) in chatStore.chats" v-bind:key="index">
+          {{ chat.text }}
+        </li>
+      </ul>
+
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,10 @@
 <template>
+  <div style="text-align: center;">
   <h2>Here you can create a room</h2>
-  <input v-model="inputName" placeholder="Enter room name" />
+  <InputText v-model="inputName" placeholder="Enter room name" /> <br/>
+    <br/>
   <button @click="handleCreateRoom">Create</button>
+  </div>
 </template>
 
 <script setup lang="ts">
