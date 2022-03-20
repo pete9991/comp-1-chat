@@ -45,6 +45,20 @@ function logOut() {
             class="mr2"
             style="margin-right: 15px"
           />
+          <Button
+            @click="$router.push('/friends')"
+            label="Friends"
+            icon="pi pi-plus"
+            class="mr2"
+            style="margin-right: 15px"
+          />
+          <Button
+            @click="$router.push('/rooms')"
+            label="Your rooms"
+            icon="pi pi-plus"
+            class="mr2"
+            style="margin-right: 15px"
+          />
         </span>
         <h4>You are logged in as: {{ userStore.userName }}</h4>
       </template>
