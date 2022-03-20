@@ -8,7 +8,7 @@ export const ChatStore = defineStore({
   id: "ChatStore",
   state: () => ({
     chats: [
-      { text: "first", sender: "tester 1" },
+      { text: "USERNAME", sender: "MESSAGE" },
       { text: "second", sender: "tester 2" },
     ],
     room: "",
