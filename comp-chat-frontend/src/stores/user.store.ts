@@ -30,5 +30,15 @@ export const UserStore = defineStore({
         .then((user) => (this.loggedInUser = user))
         .catch((err) => console.log(err));
     },
+    logOut() {
+      const loggedoutUser: User = {
+        uuid: "",
+        name: "",
+        email: "",
+        password: "",
+        rooms: [],
+      };
+      this.loggedInUser = loggedoutUser;
+    },
   },
 });

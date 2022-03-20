@@ -7,7 +7,10 @@ const chatService = new ChatService();
 export const ChatStore = defineStore({
   id: "ChatStore",
   state: () => ({
-    chats: [{ text: "first" }, { text: "second" }],
+    chats: [
+      { text: "first", sender: "tester 1" },
+      { text: "second", sender: "tester 2" },
+    ],
     room: "",
   }),
   getters: {
