@@ -46,7 +46,7 @@ function logOut() {
             style="margin-right: 15px"
           />
           <Button
-            @click="$router.push('/friends')"
+            @click="$router.push('/addfriends')"
             label="Add friends"
             icon="pi pi-plus"
             class="mr2"
