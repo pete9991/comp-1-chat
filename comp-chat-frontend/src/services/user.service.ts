@@ -23,4 +23,12 @@ export class UserService {
     });
     return res.data;
   }
+  async findUsers(search: string): Promise<User[]> {
+    const res = await http.post<User[]>("/users/find", {
+      name: search,
+      email: "",
+      password: "",
+    });
+    return res.data;
+  }
 }

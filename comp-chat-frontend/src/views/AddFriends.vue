@@ -1,11 +1,25 @@
 <template>
-  <h1>add friends</h1>
+  <h4>Search for users</h4>
+
+  <Button @click="searchUser">Search</Button> <br />
+  <InputText v-model="search" placeholder="Enter search" /> <br />
+  <ul>
+    <li v-for="(user, index) in userStore.users" v-bind:key="index">
+      {{ user.name }}
+    </li>
+  </ul>
 </template>
 
-<script>
-export default {
-  name: "AddFriends",
-};
+<script setup lang="ts">
+import { UserStore } from "@/stores/user.store";
+import { ref } from "vue";
+
+const userStore = UserStore();
+const search = ref("");
+
+function searchUser() {
+  userStore.findUsers(search.value);
+}
 </script>
 
 <style scoped></style>

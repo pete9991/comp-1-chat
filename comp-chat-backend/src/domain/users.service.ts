@@ -1,6 +1,6 @@
 import { IUsersRepository } from './borders/usersRepository.interface';
 import { User } from '../core/user.entity';
-import {FriendRequestDto} from "../users/dto/friend-request.dto";
+import { FriendRequestDto } from '../users/dto/friend-request.dto';
 
 export class UsersService {
   private userRepo: IUsersRepository;
@@ -17,8 +17,19 @@ export class UsersService {
     return this.userRepo.login(email, password);
   }
 
-  getAllFromInput(input: string) {
-    return this.userRepo.getAllFromInput(input);
+  async getAllFromInput(input: string) {
+    console.log(input);
+    const allUsers = await this.userRepo.getAllFromInput();
+    const result = [];
+    allUsers.forEach(function (user) {
+      if (user.name.includes(input) == true) {
+        result.push(user);
+      }
+    });
+    if (input == '') {
+      result.push(allUsers);
+    }
+    return result;
   }
 
   addFriend(friendrequestdto: FriendRequestDto) {

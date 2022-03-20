@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import type { User } from "@/models/User";
 import { UserService } from "@/services/user.service";
-import {FriendRequestService} from "@/services/friendRequest.service";
+import { FriendRequestService } from "@/services/friendRequest.service";
 
 const userService: UserService = new UserService();
 const friendRequestService: FriendRequestService = new FriendRequestService();
@@ -10,6 +10,7 @@ export const UserStore = defineStore({
   id: "UserStore",
   state: () => ({
     loggedInUser: { name: "" } as User,
+    users: [{ name: "testuser1" }, { name: "testuser2" }],
   }),
   getters: {
     userName: (state) => {
@@ -28,6 +29,12 @@ export const UserStore = defineStore({
       userService
         .login(email, password)
         .then((user) => (this.loggedInUser = user))
+        .catch((err) => console.log(err));
+    },
+    findUsers(search: string) {
+      userService
+        .findUsers(search)
+        .then((users) => (this.users = users))
         .catch((err) => console.log(err));
     },
     logOut() {

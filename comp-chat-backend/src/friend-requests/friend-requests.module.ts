@@ -4,22 +4,22 @@ import { FriendRequestsController } from './friend-requests.controller';
 import { FriendRequestRepositoryAdapter } from '../infrastructure/typeORM/friend-requestRepository.adapter';
 import { IFriendRequestRepository } from '../domain/borders/friend-requestRepository.interface';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { FriendRequestSchema} from "../infrastructure/typeOrm/friend-request.scema";
+import { FriendRequestSchema } from '../infrastructure/typeOrm/friend-request.scema';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([FriendRequestSchema])],
-    controllers: [FriendRequestsController],
-    providers: [
-        {
-            provide: 'FriendRequestRepository',
-            useClass: FriendRequestRepositoryAdapter,
-        },
-        {
-            inject: ['FriendRequestRepository'],
-            provide: 'FriendRequestsService',
-            useFactory: (friendRequestRepository: IFriendRequestRepository) =>
-                new FriendRequestsService(friendRequestRepository),
-        },
-    ],
+  imports: [TypeOrmModule.forFeature([FriendRequestSchema])],
+  controllers: [FriendRequestsController],
+  providers: [
+    {
+      provide: 'FriendRequestRepository',
+      useClass: FriendRequestRepositoryAdapter,
+    },
+    {
+      inject: ['FriendRequestRepository'],
+      provide: 'FriendRequestsService',
+      useFactory: (friendRequestRepository: IFriendRequestRepository) =>
+        new FriendRequestsService(friendRequestRepository),
+    },
+  ],
 })
 export class FriendRequestsModule {}

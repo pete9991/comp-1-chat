@@ -1,9 +1,8 @@
-import { Controller, Post, Body, Inject, Get } from "@nestjs/common";
+import { Controller, Post, Body, Inject, Get } from '@nestjs/common';
 import { UsersService } from '../domain/users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from '../core/user.entity';
-import {FriendRequestDto} from "./dto/friend-request.dto";
-
+import { FriendRequestDto } from './dto/friend-request.dto';
 
 @Controller('users')
 export class UsersController {
@@ -31,5 +30,9 @@ export class UsersController {
   @Post('/addFriend')
   addFriend(@Body() friendRequestDto: FriendRequestDto) {
     return this.usersService.addFriend(friendRequestDto);
+  }
+  @Post('/find')
+  findUsers(@Body() cursedTransfer: CreateUserDto): Promise<User[]> {
+    return this.usersService.getAllFromInput(cursedTransfer.name);
   }
 }
