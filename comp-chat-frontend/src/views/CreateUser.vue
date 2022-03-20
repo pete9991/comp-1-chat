@@ -4,7 +4,7 @@
   <InputText v-model="inputName" style="margin-bottom: 10px" placeholder="Enter name" /> <br />
   <InputText v-model="inputEmail" style="margin-bottom: 10px" placeholder="Enter email" /> <br />
   <InputText v-model=" inputPassword" style="margin-bottom: 10px"  placeholder="Enter password" /> <br />
-  <button @click="handleCreateUser">Create</button>
+  <Button @click="handleCreateUser">Create</Button>
 </div>
 </template>
 

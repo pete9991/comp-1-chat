@@ -25,7 +25,7 @@ function logOut() {
         <Button
           @click="$router.push('createuser')"
           label="Create User"
-          icon="pi pi-id-card"
+          icon="pi pi-user-edit"
           class="p-button-success"
           style="margin-right: 15px"
         />
@@ -41,7 +41,7 @@ function logOut() {
           <Button
             @click="$router.push('/createroom')"
             label="Create a chat room"
-            icon="pi pi-plus"
+            icon="pi pi-comments"
             class="mr2"
             style="margin-right: 15px"
           />
@@ -54,19 +54,19 @@ function logOut() {
           />
           <Button
             @click="$router.push('/rooms')"
-            label="view your and your friends rooms"
-            icon="pi pi-plus"
+            label="View rooms"
+            icon="pi pi-users"
             class="mr2"
             style="margin-right: 15px"
           />
         </span>
-        <h4>You are logged in as: {{ userStore.userName }}</h4>
+        <h4>Logged in as : {{ userStore.userName }}</h4>
       </template>
 
       <template #end>
         <Button
           @click="logOut"
-          label="Log out"
+          label=""
           icon="pi pi-times"
           class="p-button-danger"
         />

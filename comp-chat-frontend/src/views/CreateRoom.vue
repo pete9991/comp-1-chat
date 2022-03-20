@@ -3,7 +3,7 @@
   <h2>Here you can create a room</h2>
   <InputText v-model="inputName" placeholder="Enter room name" /> <br/>
     <br/>
-  <button @click="handleCreateRoom">Create</button>
+  <Button @click="handleCreateRoom">Create</Button>
   </div>
 </template>
 

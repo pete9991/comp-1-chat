@@ -1,8 +1,10 @@
 <template>
-  <h4>Search for users</h4>
+  <h3>Search for users</h3>
 
-  <Button @click="searchUser">Search</Button> <br />
+
   <InputText v-model="search" placeholder="Enter search" /> <br />
+  <br/>
+  <Button @click="searchUser">Search</Button> <br />
   <ul>
     <li v-for="(user, index) in userStore.users" v-bind:key="index">
       {{ user.name }}
