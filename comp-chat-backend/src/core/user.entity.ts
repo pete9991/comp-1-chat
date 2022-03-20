@@ -6,5 +6,5 @@ export class User {
   email: string;
   password: string;
   rooms: Room[] | null;
-  friends: string;
+  friends: User[] | null;
 }

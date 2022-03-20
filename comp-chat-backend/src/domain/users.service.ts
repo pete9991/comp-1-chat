@@ -1,5 +1,6 @@
 import { IUsersRepository } from './borders/usersRepository.interface';
 import { User } from '../core/user.entity';
+import {FriendRequestDto} from "../users/dto/friend-request.dto";
 
 export class UsersService {
   private userRepo: IUsersRepository;
@@ -20,7 +21,7 @@ export class UsersService {
     return this.userRepo.getAllFromInput(input);
   }
 
-  addFriend(uuid: string, name: string) {
-    return this.userRepo.addFriend(uuid, name);
+  addFriend(friendrequestdto: FriendRequestDto) {
+    return this.userRepo.addFriend(friendrequestdto);
   }
 }

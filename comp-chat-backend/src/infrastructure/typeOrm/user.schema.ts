@@ -27,5 +27,10 @@ export const UserSchema = new EntitySchema<User>({
       target: 'Room',
       nullable: true,
     },
+    friends: {
+      type: 'many-to-many',
+      target: 'User',
+      nullable: true,
+    }
   },
 });

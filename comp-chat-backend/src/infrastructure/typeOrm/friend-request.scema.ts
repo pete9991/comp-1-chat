@@ -7,20 +7,14 @@ export const FriendRequestSchema = new EntitySchema<FriendRequest>({
     columns: {
         uuid: {
             type: 'uuid',
-            generated: 'uuid',
             primary: true,
+            generated: 'uuid',
         },
-        sentUserUuid: {
+        senderusername: {
             type: 'varchar',
         },
-        sentUserName: {
+        recieverusername: {
             type: 'varchar',
-        },
-        receivedUserUuid: {
-            type: 'varchar',
-        },
-        isAccepted: {
-            type: 'boolean',
         },
     },
     relations: {},

@@ -1,5 +1,4 @@
 import { User } from '../../core/user.entity';
-import { UserListEntity } from '../../core/user-list.entity';
 
 export interface IUsersRepository {
 
@@ -9,5 +8,5 @@ export interface IUsersRepository {
 
   getAllFromInput(input: string): Promise<User[]>;
 
-  addFriend(uuid: string, name: string): any;
+  addFriend(friendrequestdto): any;
 }

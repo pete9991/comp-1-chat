@@ -2,10 +2,8 @@
 
 export interface IFriendRequestRepository {
     create(
-        sentUserUuid: string,
-        sentUserName: string,
-        receivedUserUuid: string,
-        isAccepted: boolean,
+        senderusername,
+        recieverusername
     ): Promise<FriendRequest>;
 
     getFriendRequests(receivedUserUuid: string): Promise<FriendRequest[]>;

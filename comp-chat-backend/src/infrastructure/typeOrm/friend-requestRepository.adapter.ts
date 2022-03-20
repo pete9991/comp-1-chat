@@ -15,16 +15,12 @@ export class FriendRequestRepositoryAdapter
     }
 
     create(
-        sentUserUuid: string,
-        sentUserName: string,
-        receivedUserUuid: string,
-        isAccepted: boolean,
+        senderusername,
+        recieverusername
     ): Promise<FriendRequest> {
         return this.friendRequestRepo.save({
-            sentUserUuid: sentUserUuid,
-            sentUserName: sentUserName,
-            receivedUserUuid: receivedUserUuid,
-            isAccepted: isAccepted,
+            senderusername,
+            recieverusername
         });
     }
 

@@ -10,16 +10,12 @@ export class FriendRequestsService {
     }
 
     create(
-        sentUserUuid: string,
-        sentUserName: string,
-        receivedUserUuid: string,
-        isAccepted: boolean,
+        senderusername: string,
+        recieverusername: string
     ): Promise<FriendRequest> {
         return this.friendRequestRepo.create(
-            sentUserUuid,
-            sentUserName,
-            receivedUserUuid,
-            isAccepted,
+            senderusername,
+            recieverusername
         );
     }
 

@@ -3,6 +3,7 @@ import { FriendRequestsService } from '../domain/friend-requests.service';
 import { CreateFriendRequestDto} from "./dto/create-friend-requests.dto";
 import { UpdateFriendRequestDto } from './dto/update-friend-request.dto';
 import { FriendRequest } from '../core/friend-request.entity';
+import {FriendRequestDto} from "../users/dto/friend-request.dto";
 
 @Controller('friend-requests')
 export class FriendRequestsController {
@@ -12,14 +13,14 @@ export class FriendRequestsController {
     ) {}
 
     @Post()
-    create(@Body() createFriendRequestDto: CreateFriendRequestDto) {
+    create(@Body() createFriendRequestDto: FriendRequestDto) {
         return this.friendRequestsService.create(
-            createFriendRequestDto.sentUserUuid,
-            createFriendRequestDto.sentUserName,
-            createFriendRequestDto.receivedUserUuid,
-            createFriendRequestDto.isAccepted,
+            createFriendRequestDto.senderusername,
+            createFriendRequestDto.recieverusername
         );
     }
+    
+    
 
     @Get()
     findAll() {
