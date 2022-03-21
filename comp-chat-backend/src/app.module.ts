@@ -3,6 +3,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RoomsModule } from './rooms/rooms.module';
 import { ChatsModule } from './chats/chats.module';
+import { FriendRequestsModule } from './friend-requests/friend-requests.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ChatsModule } from './chats/chats.module';
     UsersModule,
     RoomsModule,
     ChatsModule,
+    FriendRequestsModule,
   ],
   controllers: [],
   providers: [],
