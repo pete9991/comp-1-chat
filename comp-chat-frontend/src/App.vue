@@ -60,7 +60,9 @@ function logOut() {
             style="margin-right: 15px"
           />
         </span>
-        <h4>Logged in as : {{ userStore.userName }}</h4>
+        <span v-if="userStore.userName.length > 0">
+          <h4>You are logged in as: {{ userStore.userName }}</h4>
+        </span>
       </template>
 
       <template #end>
