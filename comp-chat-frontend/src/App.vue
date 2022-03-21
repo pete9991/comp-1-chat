@@ -66,7 +66,7 @@ function logOut() {
       <template #end>
         <Button
           @click="logOut"
-          label=""
+          label="Log Out"
           icon="pi pi-times"
           class="p-button-danger"
         />
