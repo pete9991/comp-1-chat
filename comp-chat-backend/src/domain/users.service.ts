@@ -18,7 +18,6 @@ export class UsersService {
   }
 
   async getAllFromInput(input: string) {
-    console.log(input);
     const allUsers = await this.userRepo.getAllFromInput();
     const result = [];
     allUsers.forEach(function (user) {

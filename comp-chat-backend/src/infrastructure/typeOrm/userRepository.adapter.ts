@@ -10,15 +10,15 @@ import { FriendRequestSchema } from './friend-request.scema';
 @Injectable()
 export class UserRepositoryAdapter implements IUsersRepository {
   private readonly userRepo: Repository<User>;
-  //private readonly friendRepo: Repository<FriendRequest>;
+  private readonly friendRepo: Repository<FriendRequest>;
 
   constructor(private readonly em: EntityManager) {
     this.userRepo = em.getRepository(UserSchema);
-    //this.friendRepo = em.getRepository(FriendRequestSchema);
+    this.friendRepo = em.getRepository(FriendRequestSchema);
   }
 
   addFriend(friendrequestdto: FriendRequestDto) {
-    //return this.friendRepo.findOne({});
+    return this.friendRepo.findOne({});
   }
 
   create(name: string, email: string, password: string): Promise<User> {
