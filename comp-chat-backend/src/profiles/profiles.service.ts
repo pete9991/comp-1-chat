@@ -25,4 +25,8 @@ export class ProfilesService {
       { $push: { interests: interest } },
     );
   }
+
+  getByGender(gender: string): Promise<Profile[]> {
+    return this.profileModel.find({ gender: gender }).exec();
+  }
 }
